@@ -38,6 +38,10 @@ int b2(int y)
     return x;
 }
 
+int b3(int x){
+    
+}
+
 int main(){
     input();
     cout << "B1 : " << b1() << endl;
