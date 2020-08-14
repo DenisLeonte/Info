@@ -20,7 +20,18 @@ void input()
     cout<<"Citire completa"<<endl;
 }
 
+void b1()
+{
+    int x = k;
+    x = x - (x - 1) / 3;
+    x = x - (x - 1) / 3;
+    x = x - (x - 1) / 3;
+    x = ((x - 1) / 3) - 1;
+    cout << x << endl;;
+}
+
 int main(){
     input();
+    b1();
     return 0;
 }
