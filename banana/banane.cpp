@@ -20,18 +20,27 @@ void input()
     cout<<"Citire completa"<<endl;
 }
 
-void b1()
+int b1()
 {
     int x = k;
-    x = x - (x - 1) / 3;
-    x = x - (x - 1) / 3;
-    x = x - (x - 1) / 3;
+    for(int i = 1; i <= 3; i++)
+        x = x - (x - 1) / 3;
     x = ((x - 1) / 3) - 1;
-    cout << x << endl;;
+    return x;
+}
+
+int b2(int y)
+{
+    int x;
+    x = (y + 1) * 3 + 1;
+    for(int i = 1; i <= 3; i++)
+        x = (3 * x) / 2;
+    return x;
 }
 
 int main(){
     input();
-    b1();
+    cout << "B1 : " << b1() << endl;
+    cout << "B2 : " << b2(15) + b2(31)<<endl;
     return 0;
 }
