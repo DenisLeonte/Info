@@ -9,20 +9,23 @@ int main(){
     string aux;
     char text[100];
     int n,nMax = 0;
-    cin>>n>>text;
+    cin.getline(text, 100);
+    cin >> n;
     for(int i = 0; i<=100; i++)
     {
-        if(text[i] != ' ')
-            aux.push_back(text[i]);
-        else
+        if(text[i] == ' ')    
         {
-            int k;
-            k = aux.size();
-            hashTable[k].push_back(aux);
-            if(k > nMax)
-                nMax = k;
-            aux.erase();
+                int k;
+                k = aux.size();
+                hashTable[k].push_back(aux);
+                if (k > nMax)
+                    nMax = k;
+                aux.erase();
         }
+        else if (text[i + 1] == '\0')
+            break;
+        else
+            aux.push_back(text[i]);
     }
     for(int i = n; i <= nMax; i++)
     {
