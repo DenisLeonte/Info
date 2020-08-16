@@ -1,11 +1,12 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#define NMAX 100
 
 using namespace std;
 
 int main(){
-    vector<vector<string>> hashTable;
+    vector<string> hashTable[NMAX];
     string aux;
     char text[100];
     int n,nMax = 0;
