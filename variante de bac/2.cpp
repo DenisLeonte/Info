@@ -14,18 +14,26 @@ int main(){
     cin >> n;
     for(int i = 0; i<=100; i++)
     {
+        if (text[i] == '\0')
+        {
+            int k;
+            k = aux.size();
+            hashTable[k].push_back(aux);
+            if (k > nMax)
+                nMax = k;
+            aux.erase();
+            break;
+        }
         if(text[i] == ' ')    
         {
-                int k;
-                k = aux.size();
-                hashTable[k].push_back(aux);
-                if (k > nMax)
-                    nMax = k;
-                aux.erase();
+            int k;
+            k = aux.size();
+            hashTable[k].push_back(aux);
+            if (k > nMax)
+                nMax = k;
+            aux.erase();
         }
-        else if (text[i + 1] == '\0')
-            break;
-        else
+        else 
             aux.push_back(text[i]);
     }
     for(int i = n; i <= nMax; i++)
@@ -35,7 +43,7 @@ int main(){
             cout<<it<<endl;
         }
     }
-    for(int i = 1; i<=n; i++)
+    for(int i = 1; i<n; i++)
     {
         for(auto &it:hashTable[i])
         {
